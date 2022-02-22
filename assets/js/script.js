@@ -116,50 +116,6 @@ init();
 // button.className = 'btn-styled';
 
 // ---------------------------------------------- //
-// let lastQuestionIndex = questions.length -1;
-// let runningQuestionIndex = 0;
-
-// function renderQuestion(){
-//     let q = questions[runningQuestionIndex];
-//     question.innerHTML = q.question;
-//     choicaA.innerHTML = q.choiceA;
-//     choiceB.innerHTML = q.choiceB;
-//     choiceC.innerHTML = q.choiceC;
-// }
-
-// runningQuestionindex = 0;
-// renderQuestion()
-
-// runningQuestionIndex++
-// renderQuestion()
-
-// function checkAnswer(answer){
-//     if(questions[runningQuestionIndex].correct == answer){
-//         score++;
-//         answerIsCorrect();
-//     } else {
-//         answerIsWrong
-//     }
-//     if(runningQuestionIndex < lastQuestionIndex){
-//         count = 0;
-//         runningQuestionIndex++;
-//         questionRender();
-//     } else {
-//         clearInterval(timer);
-//         scoreRender();
-//     }
-// }
-
-// startButton.addEventListener("click", startQuiz);
-
-// function startQuiz(){
-//     startButton.getElementsByClassName.display = "none";
-//     counterRender();
-//     timer = setInterval(counterRender,1000);
-//     progressRender();
-//     questionRender();
-//     quiz.style.display = "block";
-// }
 
 
 
