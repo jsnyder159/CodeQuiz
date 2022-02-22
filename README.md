@@ -31,5 +31,3 @@ when game is over there should be a place to add initials to store your score.
 
 button to view high score thats kept.
 a button that clears the high scoreboard
-
-

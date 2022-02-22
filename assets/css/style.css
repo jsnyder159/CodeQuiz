@@ -37,9 +37,23 @@ body {
     background: linear-gradient(0deg, rgb(228, 138, 4) 0%, rgb(40, 1, 77) 63%);
 }
 
-.truck {
+p {
+    margin: 5px;
+}
+
+.highScore {
+    margin: 20px;
+    text-align: center;
+}
+
+ul {
+    margin: 20px;
+    text-align: center;
+}
+
+.questionBox {
 background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,124,33,0.604079131652661) 100%);
-border: 1px solid #eceff1;
+border: 1px solid #ecf0f1;
 border-radius: 8px;
 box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
   rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
@@ -55,6 +69,7 @@ justify-content: center;
     font-size: 200%;
     text-align: center;
     height: 40%;
+    margin: 20px;
 
 }
 
@@ -63,9 +78,7 @@ justify-content: center;
     margin: 0 auto;
     text-align: center;
 
-
 }
-
 
 .story {
     font-size: 125%;

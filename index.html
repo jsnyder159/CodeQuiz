@@ -7,34 +7,49 @@
 <!-- Added css links to html -->    
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Code Quiz</title>
+    <title>JS Code Quiz</title>
 </head>
 <body>
     <header class="container">
         <!-- High Score //Upper left//Link JS -->
-        <button><h5>View Highscore</h5></button>
-        <h4>Timer: <span>0</span></h4>
+        <button><h5 id="highScoresSaved">View Highscore</h5></button>
+        <h4>Timer: <span id="timer">0</span></h4>
         <!-- Timer // Upper Right// Link JS (count down when game is active,
              0 when game is not active) -->
         
     </header>
-    <main class = "container truck">
+    <main id = "highScoreTop" class = "container questionBox">
+        <section>
+            <h2 class="highScore"></h2>
+            <ul id="scores">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li> 
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
         <!-- Where the Questions will be // Title if no game is being played
          // High Score will be shown //
         All links required through JS // Style through CSS //
          Different Styles may need to be required for different screens? -->
         <section> 
-            <h2 class="container centerBox">technique, and the presence of techniques for a specific technology does not imply that the technology can be used in all situations to create content that meets WCAG 2.1.</h2>
+            <h2 id="startComment" class="container centerBox questionLine"></h2>
                 <div class="answerBox">
-                    <p>technique, and the presence of techniques for a specific technology does not imply that the technology can be used in all situations to create content that meets WCAG 2.1.</p>
+                    <p id="startBtn" class="start"></p>
             <!-- Where answers will be for questions //
                  Need to be buttons // link in JS // style through CSS -->    
-                    <p>technique, and the presence of techniques for a specific technology does not imply that the technology can be used in all situations to create content that meets WCAG 2.1.</p>
-                    <p>123</p>
-                    <p>123</p>
-                    <p>123</p>
-                    <p>123</p>
-                    <p>123</p>
+                    <p></p>
+                    <p></p>
+                    <p id="choice1" class="buttonBox"></p>
+                    <p id="choice2" class="buttonBox"></p>
+                    <p id="choice3" class="buttonBox"></p>
+                    <p id="choice4" class="buttonBox"></p>
                 </div>
         </section>
 <!-- classes will need to be added to everything for JSS link -->
