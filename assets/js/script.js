@@ -197,27 +197,6 @@ function timerEnd() {
 
 init();
 
-// need this to occure during main screen for start button, and for each question w/ answer buttons.
-// Dynamic to creature a button in JS
-// var button = document.createElement('button');
-// button.type = 'button';
-// button.innerHTML = 'Press me';
-// button.className = 'btn-styled';
-
-// ---------------------------------------------- //
-// for (let key in data) {
-//     let value = data[key];
-//     for (i = 0; i < value.length; i++)
-
-// var selectedUser;
-
-// for( var i = 0; i < users.length; i++ ){
-//   if( users[ i ].id === 70 ){
-//     selectedUser = users[ i ];
-
-//     break;
-//   }
-// };
 
 /// ------------------ Functions -----------------------///
 /// functions will need to add data to the page, pull question from pool, and fill buttons w/ answer options
