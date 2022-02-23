@@ -16,7 +16,7 @@ header {
 
 }
 
-header button h5 {
+header a {
     color:aqua;
     background-color: blueviolet;
     padding: 15px;
@@ -24,7 +24,7 @@ header button h5 {
 
 }
 
-header h4 {
+header h1 {
     color:blueviolet;
     background-color: aqua;
     padding: 15px;
