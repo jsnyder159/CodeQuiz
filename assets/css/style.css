@@ -19,16 +19,18 @@ header {
 header a {
     color:aqua;
     background-color: blueviolet;
-    padding: 15px;
+    padding: 5px;
     border: 2px solid aqua;
+    border-radius: 5%;
 
 }
 
 header h1 {
     color:blueviolet;
     background-color: aqua;
-    padding: 15px;
+    padding: 5px;
     border: 2px solid blueviolet;
+    border-radius: 5%;
 
 }
 
@@ -79,12 +81,5 @@ justify-content: center;
     text-align: center;
 
 }
-
-.story {
-    font-size: 125%;
-    text-align: center;
-
-}
-
 
 

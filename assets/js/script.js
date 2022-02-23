@@ -4,14 +4,15 @@ let savedScoresTop = document.getElementById("highScoreTop");
 let savedScores = document.getElementById("scores");
 let startBtn = document.getElementById("startBtn");
 let choice1 = document.getElementById("choice1");
-let choice2 = document.getElementById("choice1");
-let choice3 = document.getElementById("choice1");
-let choice4 = document.getElementById("choice1");
+let choice2 = document.getElementById("choice2");
+let choice3 = document.getElementById("choice3");
+let choice4 = document.getElementById("choice4");
 let startComment = document.getElementById("startComment");
-let buttonBox = document.querySelectorAll("buttonBox");
-let timeLeft = 70
-let score = 0
-let curQuestion = 0
+let savedTitle = document.getElementById("savedTitle");
+let savedScore = document.getElementById("savedScore");
+let timeLeft = 70;
+let score = 0;
+let curQuestion = 0;
 
 
 
@@ -62,7 +63,7 @@ startComment.textContent = "This is a quiz about Javascript. You have 70 seconds
 let button = document.createElement("button");
 button.innerHTML = "Start";
 startBtn.appendChild(button);
-button.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 30px; padding: 20px;")
+button.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 30px; padding: 20px;");
 button.addEventListener("click", function(){
     timerStart()
     questionAsked(questions)
@@ -180,22 +181,37 @@ function timerEnd() {
         startComment.setAttribute("style", "font-size: 200%; padding: 20px; text-align: center; justify-content: center;");
         startBtn.textContent = "Score : " + score;
         startBtn.setAttribute("style","font-size: 125%; padding: 10px;");
-        choice2.textContent = "Type your Initials here: ";
-        const input = document.createElement("input");
-        input.setAttribute("type", "text");
-        choice2.appendChild(input);
+        choice1.textContent = "Type your Initials here: ";
+        let initialsInput = document.createElement("input");
+        initialsInput.setAttribute("type", "text");
+        choice2.appendChild(initialsInput);
         let button = document.createElement("button");
         button.innerHTML = "Submit";
-        choice2.appendChild(button);
+        choice3.appendChild(button);
         button.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 20px; padding: 3px;")
-        choice2.setAttribute("style", "justify-content: center;")
-        button.addEventListener("click", function(){
+        choice3.setAttribute("style", "justify-content: center;")
+        button.addEventListener("click", function(event){
+        event.preventDefault()
+        let initials = initialsInput.value;
+        let scores = score
+        console.log(initials)
+        let recordedScore = {
+            initials: initials,
+            scores: scores,
+        
+        };
+        console.log(initials)
+        localStorage.setItem("recordedScore", JSON.stringify(recordedScore));
+        // savedTitle.setAttribute("style", "font-size: 200%; padding: 20px; text-align: center; justify-content: center; color: aqua; padding: 20px;");
         // need to link to other html page. 
         });
     }
 }
 
 init();
+// Use for second page function
+// );
+
 
 
 /// ------------------ Functions -----------------------///
