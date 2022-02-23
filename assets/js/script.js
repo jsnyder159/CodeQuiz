@@ -16,78 +16,78 @@ let curQuestion = 0;
 
 
 
-let questions = [ {
-    question : "What does JS stand for111?",
-    choiceA : "Java Subject.",
-    choiceB : "Jupiter Script.",
-    choiceC : "Java Script.",
-    correct : "C"
+let questions = [{
+    question: "What does JS stand for111?",
+    choiceA: "A: Java Subject.",
+    choiceB: "B: Jupiter Script.",
+    choiceC: "C: Java Script.",
+    correct: "C"
 },
 {
-    question : "What does JS stand for222?",
-    choiceA : "Java Subject.",
-    choiceB : "Jupiter Script.",
-    choiceC : "Java Script",
-    correct : "C" 
+    question: "What does JS stand for222?",
+    choiceA: "A: Java Subject.",
+    choiceB: "B: Jupiter Script.",
+    choiceC: "C: Java Script.",
+    correct: "C"
 },
 {
-    question : "What does JS stand for333?",
-    choiceA : "Java Subject.",
-    choiceB : "Jupiter Script.",
-    choiceC : "Java Script",
-    correct : "C"
+    question: "What does JS stand for333?",
+    choiceA: "A: Java Subject.",
+    choiceB: "B: Jupiter Script.",
+    choiceC: "C: Java Script.",
+    correct: "C"
 },
 {
-    question : "What does JS stand for444?",
-    choiceA : "Java Subject.",
-    choiceB : "Jupiter Script.",
-    choiceC : "Java Script",
-    correct : "C"
+    question: "What does JS stand for444?",
+    choiceA: "A: Java Subject.",
+    choiceB: "B: Jupiter Script.",
+    choiceC: "C: Java Script.",
+    correct: "C"
 },
 {
-    question : "What does JS stand for555?",
-    choiceA : "Java Subject.",
-    choiceB : "Jupiter Script.",
-    choiceC : "Java Script",
-    correct : "C"
+    question: "What does JS stand for555?",
+    choiceA: "A: Java Subject.",
+    choiceB: "B: Jupiter Script.",
+    choiceC: "C: Java Script.",
+    correct: "C"
 }]
 
 
-function init(){
+function init() {
     startWind();
 }
 
 
-function startWind(){
-startComment.textContent = "This is a quiz about Javascript. You have 70 seconds to answer 10 questions.  A wrong answer will subtract 5 seconds from your timer.";
-let button = document.createElement("button");
-button.innerHTML = "Start";
-startBtn.appendChild(button);
-button.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 30px; padding: 20px;");
-button.addEventListener("click", function(){
-    timerStart()
-    questionAsked(questions)
-})
+function startWind() {
+    startComment.textContent = "This is a quiz about Javascript. You have 70 seconds to answer 10 questions.  A wrong answer will subtract 5 seconds from your timer.";
+    let button = document.createElement("button");
+    button.innerHTML = "Start";
+    startBtn.appendChild(button);
+    button.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 30px; padding: 20px;");
+    button.addEventListener("click", function () {
+        timerStart()
+        questionAsked(questions)
+    })
 }
 
 
 function timerStart() {
-let timerCount = setInterval(function() {
-    timeLeft--;
-    timer.textContent = timeLeft;
-    if(timeLeft <= 0){
-    clearInterval(timerCount);
-    timerEnd();
-    }
-}, 1000);
+    let timerCount = setInterval(function () {
+        timeLeft--;
+        timer.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(timerCount);
+            timerEnd();
+        }
+    }, 1000);
 }
 
 function questionAsked() {
-if (curQuestion > questions.length-1){
-    timerEnd()
-    return;
-}
-let correct = questions[curQuestion].correct;
+    if (curQuestion > questions.length - 1) {
+        timerEnd()
+        return;
+    }
+    let correct = questions[curQuestion].correct;
     if (timeLeft > 0) {
         startComment.textContent = questions[curQuestion].question;
         startComment.setAttribute("style", "font-size: 200%; padding: 20px; text-align: center; justify-content: center; color: black; padding: 20px;");
@@ -100,44 +100,48 @@ let correct = questions[curQuestion].correct;
         button.innerHTML = questions[curQuestion].choiceA;
         choice1.append(button);
         button.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 20px; padding: 20px;")
-        button.addEventListener("click", function(){
-            if (curQuestion > questions.length-1){
+        button.addEventListener("click", function () {
+            if (curQuestion > questions.length - 1) {
                 timerEnd()
                 return;
             }
-            let A = questions[curQuestion].correct="A";
+            let A = questions[curQuestion].correct = "A";
             curQuestion++;
-            if (A === correct){
+            if (A === correct) {
                 score += 10;
+                choice4.textContent = "Correct!"
             }
-            if (A !== correct){
-                if (timeLeft >= 0){
+            if (A !== correct) {
+                if (timeLeft >= 0) {
                     timeLeft -= 5;
+                    choice4.textContent = "InCorrect!"
                 }
-            }
-            questionAsked()
+            }   
+            questionAsked()  
         })
-    
+
 
         let button2 = document.createElement("button");
         button2.innerHTML = questions[curQuestion].choiceB;
         choice1.append(button2);
         button2.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 20px; padding: 20px;")
-        button2.addEventListener("click", function(){
-            if (curQuestion > questions.length-1){
+        button2.addEventListener("click", function () {
+            if (curQuestion > questions.length - 1) {
                 timerEnd()
                 return;
             }
-            let B = questions[curQuestion].correct="B";
+            let B = questions[curQuestion].correct = "B";
             curQuestion++;
-            if (B === correct){
+            if (B === correct) {
                 score += 10;
+                choice4.textContent = "Correct!"
             }
             if (B !== correct) {
-                if (timeLeft >= 0){
+                if (timeLeft >= 0) {
                     timeLeft -= 5;
+                    choice4.textContent = "InCorrect!"
                 }
-                
+
             }
             questionAsked()
         });
@@ -146,41 +150,44 @@ let correct = questions[curQuestion].correct;
         button3.innerHTML = questions[curQuestion].choiceC;
         choice1.append(button3);
         button3.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 20px; padding: 20px;")
-        button3.addEventListener("click", function(){
-            if (curQuestion > questions.length-1){
+        button3.addEventListener("click", function () {
+            if (curQuestion > questions.length - 1) {
                 timerEnd()
                 return;
             }
-            let C = questions[curQuestion].correct="C";
+            let C = questions[curQuestion].correct = "C";
             curQuestion++;
-            if (C === correct){
+            if (C === correct) {
                 score += 10;
+                choice4.textContent = "Correct!"
             }
-            if (C !== correct){
-                if (timeLeft >= 0){
-                timeLeft -= 5;
+            if (C !== correct) {
+                if (timeLeft >= 0) {
+                    timeLeft -= 5;
+                    choice4.textContent = "InCorrect!"
                 }
             }
             questionAsked()
 
-        console.log(correct)
-        console.log(C)
-        }); 
+            console.log(correct)
+            console.log(C)
+        });
 
-        for (let i=0; i< questions.length; i++)  {
+        for (let i = 0; i < questions.length; i++) {
         }
-    } 
-        
+    }
+
 }
 
 
 function timerEnd() {
-    if(timeLeft <= 0 || curQuestion > questions.length-1) {
+    if (timeLeft <= 0 || curQuestion > questions.length - 1) {
         choice1.textContent = "";
+        choice4.textContent = "";
         startComment.textContent = "Time is up!";
         startComment.setAttribute("style", "font-size: 200%; padding: 20px; text-align: center; justify-content: center;");
         startBtn.textContent = "Score : " + score;
-        startBtn.setAttribute("style","font-size: 125%; padding: 10px;");
+        startBtn.setAttribute("style", "font-size: 125%; padding: 10px;");
         choice1.textContent = "Type your Initials here: ";
         let initialsInput = document.createElement("input");
         initialsInput.setAttribute("type", "text");
@@ -190,20 +197,20 @@ function timerEnd() {
         choice3.appendChild(button);
         button.setAttribute("style", "background-color: black; color: white; border-radius: 15%; font-size: 110%; margin: 20px; padding: 3px;")
         choice3.setAttribute("style", "justify-content: center;")
-        button.addEventListener("click", function(event){
-        event.preventDefault()
-        let initials = initialsInput.value;
-        let scores = score
-        console.log(initials)
-        let recordedScore = {
-            initials: initials,
-            scores: scores,
-        
-        };
-        console.log(initials)
-        localStorage.setItem("recordedScore", JSON.stringify(recordedScore));
-        // savedTitle.setAttribute("style", "font-size: 200%; padding: 20px; text-align: center; justify-content: center; color: aqua; padding: 20px;");
-        // need to link to other html page. 
+        button.addEventListener("click", function (event) {
+            event.preventDefault()
+            let initials = initialsInput.value;
+            let scores = score
+            console.log(initials)
+            let recordedScore = {
+                initials: initials,
+                scores: scores,
+
+            };
+            console.log(initials)
+            localStorage.setItem("recordedScore", JSON.stringify(recordedScore));
+            // savedTitle.setAttribute("style", "font-size: 200%; padding: 20px; text-align: center; justify-content: center; color: aqua; padding: 20px;");
+            // need to link to other html page. 
         });
     }
 }
@@ -218,8 +225,8 @@ init();
 /// functions will need to add data to the page, pull question from pool, and fill buttons w/ answer options
 // functions will have to style each page
 // when questions are answered correctly points will need to be added to the score which is store locally?
-// final score will need to be added to a score board w/ initials 
+// final score will need to be added to a score board w/ initials
 // 
-  
+
 
 
