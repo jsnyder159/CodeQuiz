@@ -1,14 +1,12 @@
-let highScoreTable = document.getElementById("highScoresSaved");
 let timer = document.getElementById("timer");
 let savedScoresTop = document.getElementById("highScoreTop");
-let savedScores = document.getElementById("scores");
 let startBtn = document.getElementById("startBtn");
 let choice1 = document.getElementById("choice1");
 let choice2 = document.getElementById("choice2");
 let choice3 = document.getElementById("choice3");
 let choice4 = document.getElementById("choice4");
 let startComment = document.getElementById("startComment");
-let savedScore = document.getElementById("savedScore");
+
 let timeLeft = 70;
 let score = 0;
 let curQuestion = 0;
@@ -59,6 +57,7 @@ function init() {
 
 
 function startWind() {
+    startComment.textContent = "";
     startComment.textContent = "This is a quiz about Javascript. You have 70 seconds to answer 10 questions.  A wrong answer will subtract 5 seconds from your timer.";
     startComment.setAttribute("style", "color: orchid;")
     let button = document.createElement("button");
@@ -207,16 +206,16 @@ function timerEnd() {
         choice3.setAttribute("style", "justify-content: center;")
         button.addEventListener("click", function (event) {
             event.preventDefault()
+            let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
             let initials = initialsInput.value;
             let scores = score
             let recordedScore = {
-                name: initials,
+                initials: initials,
                 scores: scores,
             };
-            userData.push(recordedScore)
-            console.log(userData)
+            highScores.push(recordedScore);
+            localStorage.setItem("highScores", JSON.stringify(highScores))
             
-            localStorage.setItem("recordedScore", JSON.stringify(recordedScore));
             location.replace("./highscore.html")
 
         });
@@ -231,17 +230,6 @@ init();
 // when questions are answered correctly points will need to be added to the score which is store locally?
 // final score will need to be added to a score board w/ initials
 // 
-/// __________________________________________________///
-///// our array
-// var movies = ["Reservoir Dogs", "Pulp Fiction", "Jackie Brown", 
-// "Kill Bill", "Death Proof", "Inglourious Basterds"];
- 
-// // storing our array as a string
-// localStorage.setItem("quentinTarantino", JSON.stringify(movies));
- 
-// // retrieving our data and converting it back into an array
-// var retrievedData = localStorage.getItem("quentinTarantino");
-// var movies2 = JSON.parse(retrievedData);
- 
-// //making sure it still is an array
-// alert(movies2.length);
+
+
+

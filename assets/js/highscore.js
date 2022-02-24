@@ -1,11 +1,10 @@
 let savedTitle = document.getElementById("savedTitle");
 let resetBtn = document.getElementById("resetBtn");
-let savedScore = document.getElementById('savedScore');
-let savedInfo = JSON.parse(window.localStorage.getItem('recordedScore'));
-
+let scores = document.getElementById("scores");
+let highScoreTable = document.getElementById("highScoresSaved");
 
 function init(){
-    scoreTable();
+    printScore();
 }
 
 let button = document.createElement("button");
@@ -16,8 +15,33 @@ let button = document.createElement("button");
     button.addEventListener("click", function () {
         localStorage.clear();
     })
+    
+function printScore(){
+    let savedScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    savedScores.forEach(function(score){
+        let li = document.createElement("li");
+        li.textContent = `${score.initials}: ${score.scores}` 
+        li.setAttribute("style", "background-color: orchid; color: black; font-size: 200%;");
+        scores.appendChild(li);
+    })
+        
+}
 
-    for(let item in userData){
-        savedScore.appendChild("#savedScore");
+    
+init();
 
-    }
+    // for (var i = 0; i < data.length; i++) {
+    //     // Creating elements, tablerow, tabledata, and anchor
+    //     var createTableRow = document.createElement('tr');
+    //     var tableData = document.createElement('td');
+    //     var link = document.createElement('a');
+
+    //     // Setting the text of link and the href of the link
+    //     link.textContent = data[i].html_url;
+    //     link.href = data[i].html_url;
+
+    //     // Appending the link to the tabledata and then appending the tabledata to the tablerow
+    //     // The tablerow then gets appended to the tablebody
+    //     tableData.appendChild(link);
+    //     createTableRow.appendChild(tableData);
+    //     tableBody.appendChild(createTableRow);
