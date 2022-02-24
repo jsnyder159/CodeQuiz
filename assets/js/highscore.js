@@ -3,18 +3,10 @@ let resetBtn = document.getElementById("resetBtn");
 let savedScore = document.getElementById('savedScore');
 let savedInfo = JSON.parse(window.localStorage.getItem('recordedScore'));
 
-let scores = 0
 
 function init(){
     scoreTable();
 }
-
-if (typeof(Storage) !== "undefined") {
-
-} else {
-
-}
-
 
 let button = document.createElement("button");
     savedTitle.setAttribute("style", "font-sized: 125%; padding: 10px; text-align: center; justify-content: center; border: 5px solid orchid; border-radius 15%; background-color: black; color: orchid; ")
@@ -25,3 +17,7 @@ let button = document.createElement("button");
         localStorage.clear();
     })
 
+    for(let item in userData){
+        savedScore.appendChild("#savedScore");
+
+    }

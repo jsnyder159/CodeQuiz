@@ -29,6 +29,14 @@ header a {
 
 }
 
+#highScoresSaved2 {
+    color: orchid;
+    align-content: center;
+    justify-content: end;
+
+
+}
+
 footer {
     justify-content: center;
     align-items: center;

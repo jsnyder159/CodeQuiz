@@ -12,7 +12,7 @@ let savedScore = document.getElementById("savedScore");
 let timeLeft = 70;
 let score = 0;
 let curQuestion = 0;
-let scored = []
+let userData = []
 
 
 
@@ -210,11 +210,11 @@ function timerEnd() {
             let initials = initialsInput.value;
             let scores = score
             let recordedScore = {
-                initials: initials,
+                name: initials,
                 scores: scores,
             };
-            scored.push(recordedScore)
-            console.log(scored)
+            userData.push(recordedScore)
+            console.log(userData)
             
             localStorage.setItem("recordedScore", JSON.stringify(recordedScore));
             location.replace("./highscore.html")
@@ -245,5 +245,3 @@ init();
  
 // //making sure it still is an array
 // alert(movies2.length);
-
-

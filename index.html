@@ -3,32 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Added css links to html -->    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>JS Code Quiz</title>
 </head>
 <body>
     <header class="container">
-        <!-- High Score //Upper left//Link JS -->
         <a id="highScoresSaved" href="./highscore.html">View Highscore</a>
-        <h1>Timer: <span id="timer">0</span></h1>
-        <!-- Timer // Upper Right// Link JS (count down when game is active,
-             0 when game is not active) -->
-        
+        <h1>Timer: <span id="timer">0</span></h1>    
     </header>
     <main id = "highScoreTop" class = "container questionBox">
-        <!-- Where the Questions will be // Title if no game is being played
-         // High Score will be shown //
-        All links required through JS // Style through CSS //
-         Different Styles may need to be required for different screens? -->
         <section> 
             <h2 id="startComment" class="container centerBox questionLine"></h2>
                 <div class="answerBox">
                     <p id="startBtn" class="start"></p>
-            <!-- Where answers will be for questions //
-                 Need to be buttons // link in JS // style through CSS -->    
                     <p></p>
                     <p></p>
                     <p id="choice1"></p>
@@ -37,12 +26,9 @@
                     <p id="choice4"></p>
                 </div>
         </section>
-<!-- classes will need to be added to everything for JSS link -->
     </main>
     <footer class="container">
-
     </footer>
-<!-- Linked JS to html -->
     <script src= "./assets/js/script.js"></script>
 </body>
 </html>
